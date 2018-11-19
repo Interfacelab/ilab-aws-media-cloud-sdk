@@ -1,8 +1,14 @@
 <?php
 namespace ILAB_Aws\Exception;
 
-class CouldNotCreateChecksumException extends \RuntimeException
+use ILAB_Aws\HasMonitoringEventsTrait;
+use ILAB_Aws\MonitoringEventsInterface;
+
+class CouldNotCreateChecksumException extends \RuntimeException implements
+    MonitoringEventsInterface
 {
+    use HasMonitoringEventsTrait;
+
     public function __construct($algorithm, \Exception $previous = null)
     {
         $prefix = $algorithm === 'md5' ? "An" : "A";

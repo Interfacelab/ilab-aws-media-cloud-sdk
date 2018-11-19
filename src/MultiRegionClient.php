@@ -3,8 +3,6 @@ namespace ILAB_Aws;
 
 use ILAB_Aws\Endpoint\PartitionEndpointProvider;
 use ILAB_Aws\Endpoint\PartitionInterface;
-use GuzzleHttp\Promise\FulfilledPromise;
-use Psr\Http\Message\RequestInterface;
 
 class MultiRegionClient implements AwsClientInterface
 {

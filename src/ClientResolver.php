@@ -6,13 +6,10 @@ use ILAB_Aws\Api\ApiProvider;
 use ILAB_Aws\Api\Service;
 use ILAB_Aws\Credentials\Credentials;
 use ILAB_Aws\Credentials\CredentialsInterface;
-use ILAB_Aws\Endpoint\Partition;
 use ILAB_Aws\Endpoint\PartitionEndpointProvider;
-use ILAB_Aws\Endpoint\PartitionProviderInterface;
 use ILAB_Aws\Signature\SignatureProvider;
 use ILAB_Aws\Endpoint\EndpointProvider;
 use ILAB_Aws\Credentials\CredentialProvider;
-use GuzzleHttp\Promise;
 use InvalidArgumentException as IAE;
 use Psr\Http\Message\RequestInterface;
 
@@ -389,7 +386,9 @@ class ClientResolver
     {
         if (is_callable($value)) {
             return;
-        } elseif ($value instanceof CredentialsInterface) {
+        }
+
+        if ($value instanceof CredentialsInterface) {
             $args['credentials'] = CredentialProvider::fromCredentials($value);
         } elseif (is_array($value)
             && isset($value['key'])
@@ -567,6 +566,9 @@ class ClientResolver
 
         $value = array_map('strval', $value);
 
+        if (defined('HHVM_VERSION')) {
+            array_unshift($value, 'HHVM/' . HHVM_VERSION);
+        }
         array_unshift($value, 'aws-sdk-php/' . Sdk::VERSION);
         $args['ua_append'] = $value;
 

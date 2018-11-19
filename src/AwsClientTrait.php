@@ -2,7 +2,6 @@
 namespace ILAB_Aws;
 
 use ILAB_Aws\Api\Service;
-use GuzzleHttp\Promise\Promise;
 
 /**
  * A trait providing generic functionality for interacting with Amazon Web

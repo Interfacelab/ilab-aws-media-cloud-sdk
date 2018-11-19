@@ -1,4 +1,11 @@
 <?php
 namespace ILAB_Aws\Exception;
 
-class CredentialsException extends \RuntimeException {}
+use ILAB_Aws\HasMonitoringEventsTrait;
+use ILAB_Aws\MonitoringEventsInterface;
+
+class CredentialsException extends \RuntimeException implements
+    MonitoringEventsInterface
+{
+    use HasMonitoringEventsTrait;
+}

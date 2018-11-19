@@ -1,0 +1,9 @@
+<?php
+namespace ILAB_Aws\XRay\Exception;
+
+use ILAB_Aws\Exception\AwsException;
+
+/**
+ * Represents an error interacting with the **AWS X-Ray** service.
+ */
+class XRayException extends AwsException {}

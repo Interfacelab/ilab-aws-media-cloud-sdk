@@ -1,10 +1,15 @@
 <?php
 namespace ILAB_Aws\Exception;
 
+use ILAB_Aws\HasMonitoringEventsTrait;
+use ILAB_Aws\MonitoringEventsInterface;
 use ILAB_Aws\Multipart\UploadState;
 
-class MultipartUploadException extends \RuntimeException
+class MultipartUploadException extends \RuntimeException implements
+    MonitoringEventsInterface
 {
+    use HasMonitoringEventsTrait;
+
     /** @var UploadState State of the erroneous transfer */
     private $state;
 

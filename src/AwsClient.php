@@ -4,6 +4,9 @@ namespace ILAB_Aws;
 use ILAB_Aws\Api\ApiProvider;
 use ILAB_Aws\Api\DocModel;
 use ILAB_Aws\Api\Service;
+use ILAB_Aws\ClientSideMonitoring\ApiCallAttemptMonitoringMiddleware;
+use ILAB_Aws\ClientSideMonitoring\ApiCallMonitoringMiddleware;
+use ILAB_Aws\ClientSideMonitoring\ConfigurationProvider;
 use ILAB_Aws\Signature\SignatureProvider;
 use GuzzleHttp\Psr7\Uri;
 
@@ -165,6 +168,7 @@ class AwsClient implements AwsClientInterface
         $this->defaultRequestOptions = $config['http'];
         $this->addSignatureMiddleware();
         $this->addInvocationId();
+        $this->addClientSideMonitoring($args);
 
         if (isset($args['with_resolved'])) {
             $args['with_resolved']($config);
@@ -295,6 +299,32 @@ class AwsClient implements AwsClientInterface
     {
         // Add invocation id to each request
         $this->handlerList->prependSign(Middleware::invocationId(), 'invocation-id');
+    }
+
+    private function addClientSideMonitoring($args)
+    {
+        $options = ConfigurationProvider::defaultProvider($args);
+
+        $this->handlerList->appendBuild(
+            ApiCallMonitoringMiddleware::wrap(
+                $this->credentialProvider,
+                $options,
+                $this->region,
+                $this->getApi()->getServiceId()
+            ),
+            'ApiCallMonitoringMiddleware'
+        );
+
+        $callAttemptMiddleware = ApiCallAttemptMonitoringMiddleware::wrap(
+            $this->credentialProvider,
+            $options,
+            $this->region,
+            $this->getApi()->getServiceId()
+        );
+        $this->handlerList->appendAttempt (
+            $callAttemptMiddleware,
+            'ApiCallAttemptMonitoringMiddleware'
+        );
     }
 
     /**

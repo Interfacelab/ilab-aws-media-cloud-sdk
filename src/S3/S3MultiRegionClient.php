@@ -1,7 +1,6 @@
 <?php
 namespace ILAB_Aws\S3;
 
-use ILAB_Aws\Api\Parser\PayloadParserTrait;
 use ILAB_Aws\CacheInterface;
 use ILAB_Aws\CommandInterface;
 use ILAB_Aws\LruArrayCache;
@@ -29,6 +28,8 @@ use GuzzleHttp\Promise;
  * @method \GuzzleHttp\Promise\Promise deleteBucketAnalyticsConfigurationAsync(array $args = [])
  * @method \ILAB_Aws\Result deleteBucketCors(array $args = [])
  * @method \GuzzleHttp\Promise\Promise deleteBucketCorsAsync(array $args = [])
+ * @method \ILAB_Aws\Result deleteBucketEncryption(array $args = [])
+ * @method \GuzzleHttp\Promise\Promise deleteBucketEncryptionAsync(array $args = [])
  * @method \ILAB_Aws\Result deleteBucketInventoryConfiguration(array $args = [])
  * @method \GuzzleHttp\Promise\Promise deleteBucketInventoryConfigurationAsync(array $args = [])
  * @method \ILAB_Aws\Result deleteBucketLifecycle(array $args = [])
@@ -49,6 +50,8 @@ use GuzzleHttp\Promise;
  * @method \GuzzleHttp\Promise\Promise deleteObjectTaggingAsync(array $args = [])
  * @method \ILAB_Aws\Result deleteObjects(array $args = [])
  * @method \GuzzleHttp\Promise\Promise deleteObjectsAsync(array $args = [])
+ * @method \ILAB_Aws\Result deletePublicAccessBlock(array $args = [])
+ * @method \GuzzleHttp\Promise\Promise deletePublicAccessBlockAsync(array $args = [])
  * @method \ILAB_Aws\Result getBucketAccelerateConfiguration(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getBucketAccelerateConfigurationAsync(array $args = [])
  * @method \ILAB_Aws\Result getBucketAcl(array $args = [])
@@ -57,6 +60,8 @@ use GuzzleHttp\Promise;
  * @method \GuzzleHttp\Promise\Promise getBucketAnalyticsConfigurationAsync(array $args = [])
  * @method \ILAB_Aws\Result getBucketCors(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getBucketCorsAsync(array $args = [])
+ * @method \ILAB_Aws\Result getBucketEncryption(array $args = [])
+ * @method \GuzzleHttp\Promise\Promise getBucketEncryptionAsync(array $args = [])
  * @method \ILAB_Aws\Result getBucketInventoryConfiguration(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getBucketInventoryConfigurationAsync(array $args = [])
  * @method \ILAB_Aws\Result getBucketLifecycle(array $args = [])
@@ -75,6 +80,8 @@ use GuzzleHttp\Promise;
  * @method \GuzzleHttp\Promise\Promise getBucketNotificationConfigurationAsync(array $args = [])
  * @method \ILAB_Aws\Result getBucketPolicy(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getBucketPolicyAsync(array $args = [])
+ * @method \ILAB_Aws\Result getBucketPolicyStatus(array $args = [])
+ * @method \GuzzleHttp\Promise\Promise getBucketPolicyStatusAsync(array $args = [])
  * @method \ILAB_Aws\Result getBucketReplication(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getBucketReplicationAsync(array $args = [])
  * @method \ILAB_Aws\Result getBucketRequestPayment(array $args = [])
@@ -93,6 +100,8 @@ use GuzzleHttp\Promise;
  * @method \GuzzleHttp\Promise\Promise getObjectTaggingAsync(array $args = [])
  * @method \ILAB_Aws\Result getObjectTorrent(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getObjectTorrentAsync(array $args = [])
+ * @method \ILAB_Aws\Result getPublicAccessBlock(array $args = [])
+ * @method \GuzzleHttp\Promise\Promise getPublicAccessBlockAsync(array $args = [])
  * @method \ILAB_Aws\Result headBucket(array $args = [])
  * @method \GuzzleHttp\Promise\Promise headBucketAsync(array $args = [])
  * @method \ILAB_Aws\Result headObject(array $args = [])
@@ -123,6 +132,8 @@ use GuzzleHttp\Promise;
  * @method \GuzzleHttp\Promise\Promise putBucketAnalyticsConfigurationAsync(array $args = [])
  * @method \ILAB_Aws\Result putBucketCors(array $args = [])
  * @method \GuzzleHttp\Promise\Promise putBucketCorsAsync(array $args = [])
+ * @method \ILAB_Aws\Result putBucketEncryption(array $args = [])
+ * @method \GuzzleHttp\Promise\Promise putBucketEncryptionAsync(array $args = [])
  * @method \ILAB_Aws\Result putBucketInventoryConfiguration(array $args = [])
  * @method \GuzzleHttp\Promise\Promise putBucketInventoryConfigurationAsync(array $args = [])
  * @method \ILAB_Aws\Result putBucketLifecycle(array $args = [])
@@ -155,8 +166,12 @@ use GuzzleHttp\Promise;
  * @method \GuzzleHttp\Promise\Promise putObjectAclAsync(array $args = [])
  * @method \ILAB_Aws\Result putObjectTagging(array $args = [])
  * @method \GuzzleHttp\Promise\Promise putObjectTaggingAsync(array $args = [])
+ * @method \ILAB_Aws\Result putPublicAccessBlock(array $args = [])
+ * @method \GuzzleHttp\Promise\Promise putPublicAccessBlockAsync(array $args = [])
  * @method \ILAB_Aws\Result restoreObject(array $args = [])
  * @method \GuzzleHttp\Promise\Promise restoreObjectAsync(array $args = [])
+ * @method \ILAB_Aws\Result selectObjectContent(array $args = [])
+ * @method \GuzzleHttp\Promise\Promise selectObjectContentAsync(array $args = [])
  * @method \ILAB_Aws\Result uploadPart(array $args = [])
  * @method \GuzzleHttp\Promise\Promise uploadPartAsync(array $args = [])
  * @method \ILAB_Aws\Result uploadPartCopy(array $args = [])
@@ -239,7 +254,7 @@ class S3MultiRegionClient extends BaseClient implements S3ClientInterface
                     } catch (AwsException $e) {
                         if ($e->getAwsErrorCode() === 'AuthorizationHeaderMalformed') {
                             $region = $this->determineBucketRegionFromExceptionBody(
-                                $e->getResponse()->getBody()
+                                $e->getResponse()
                             );
                             if (!empty($region)) {
                                 $this->cache->set($cacheKey, $region);

@@ -143,7 +143,10 @@ class PostObjectV4
     {
         $uri = new Uri($this->client->getEndpoint());
 
-        if (($uri->getScheme() === 'https' && strpos($this->bucket, '.') !== false) || $this->client->getConfig('use_path_style_endpoint'))  {
+        if ($this->client->getConfig('use_path_style_endpoint') === true
+            || ($uri->getScheme() === 'https'
+            && strpos($this->bucket, '.') !== false)
+        ) {
             // Use path-style URLs
             $uri = $uri->withPath("/{$this->bucket}");
         } else {
