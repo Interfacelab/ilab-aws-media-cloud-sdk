@@ -168,7 +168,7 @@ class AwsClient implements AwsClientInterface
         $this->defaultRequestOptions = $config['http'];
         $this->addSignatureMiddleware();
         $this->addInvocationId();
-        $this->addClientSideMonitoring($args);
+        //$this->addClientSideMonitoring($args);
 
         if (isset($args['with_resolved'])) {
             $args['with_resolved']($config);
