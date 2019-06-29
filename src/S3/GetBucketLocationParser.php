@@ -1,9 +1,9 @@
 <?php
-namespace ILAB_Aws\S3;
+namespace ILABAmazon\S3;
 
-use ILAB_Aws\Api\Parser\AbstractParser;
-use ILAB_Aws\Api\StructureShape;
-use ILAB_Aws\CommandInterface;
+use ILABAmazon\Api\Parser\AbstractParser;
+use ILABAmazon\Api\StructureShape;
+use ILABAmazon\CommandInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 

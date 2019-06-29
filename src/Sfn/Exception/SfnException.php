@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\Sfn\Exception;
+namespace ILABAmazon\Sfn\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWS Step Functions** service.

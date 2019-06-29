@@ -1,9 +1,9 @@
 <?php
-namespace ILAB_Aws\S3;
+namespace ILABAmazon\S3;
 
 use Aws;
-use ILAB_Aws\CommandInterface;
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\CommandInterface;
+use ILABAmazon\Exception\AwsException;
 use GuzzleHttp\Promise;
 use GuzzleHttp\Promise\PromisorInterface;
 use Iterator;
@@ -46,7 +46,7 @@ class Transfer implements PromisorInterface
      *   iterator. If the $source option is not an array, then this option is
      *   ignored.
      * - before: (callable) A callback to invoke before each transfer. The
-     *   callback accepts a single argument: Aws\CommandInterface $command.
+     *   callback accepts a single argument: ILABAmazon\CommandInterface $command.
      *   The provided command will be either a GetObject, PutObject,
      *   InitiateMultipartUpload, or UploadPart command.
      * - mup_threshold: (int) Size in bytes in which a multipart upload should
@@ -277,7 +277,7 @@ class Transfer implements PromisorInterface
         }
 
         // Create a GetObject command pool and return the promise.
-        return (new Aws\CommandPool($this->client, $commands, [
+        return (new ILABAmazon\CommandPool($this->client, $commands, [
             'concurrency' => $this->concurrency,
             'before'      => $this->before,
             'rejected'    => function ($reason, $idx, Promise\PromiseInterface $p) {
@@ -289,7 +289,7 @@ class Transfer implements PromisorInterface
     private function createUploadPromise()
     {
         // Map each file into a promise that performs the actual transfer.
-        $files = \ILAB_Aws\map($this->getUploadsIterator(), function ($file) {
+        $files = \ILABAmazon\map($this->getUploadsIterator(), function ($file) {
             return (filesize($file) >= $this->mupThreshold)
                 ? $this->uploadMultipart($file)
                 : $this->upload($file);
@@ -304,8 +304,8 @@ class Transfer implements PromisorInterface
     private function getUploadsIterator()
     {
         if (is_string($this->source)) {
-            return Aws\filter(
-                Aws\recursive_dir_iterator($this->sourceMetadata['path']),
+            return ILABAmazon\filter(
+                ILABAmazon\recursive_dir_iterator($this->sourceMetadata['path']),
                 function ($file) { return !is_dir($file); }
             );
         }
@@ -326,10 +326,10 @@ class Transfer implements PromisorInterface
             $files = $this->client
                 ->getPaginator('ListObjects', $listArgs)
                 ->search('Contents[].Key');
-            $files = Aws\map($files, function ($key) use ($listArgs) {
+            $files = ILABAmazon\map($files, function ($key) use ($listArgs) {
                 return "s3://{$listArgs['Bucket']}/$key";
             });
-            return Aws\filter($files, function ($key) {
+            return ILABAmazon\filter($files, function ($key) {
                 return substr($key, -1, 1) !== '/';
             });
         }

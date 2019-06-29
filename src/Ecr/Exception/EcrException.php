@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\Ecr\Exception;
+namespace ILABAmazon\Ecr\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **Amazon EC2 Container Registry** service.

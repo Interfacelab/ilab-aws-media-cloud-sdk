@@ -1,8 +1,8 @@
 <?php
-namespace ILAB_Aws\Api\Parser;
+namespace ILABAmazon\Api\Parser;
 
-use ILAB_Aws\Api\DateTimeResult;
-use ILAB_Aws\Api\Shape;
+use ILABAmazon\Api\DateTimeResult;
+use ILABAmazon\Api\Shape;
 
 /**
  * @internal Implements standard JSON parsing.

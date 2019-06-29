@@ -1,8 +1,8 @@
 <?php
-namespace ILAB_Aws\S3\Crypto;
+namespace ILABAmazon\S3\Crypto;
 
-use \ILAB_Aws\Crypto\MetadataStrategyInterface;
-use \ILAB_Aws\Crypto\MetadataEnvelope;
+use \ILABAmazon\Crypto\MetadataStrategyInterface;
+use \ILABAmazon\Crypto\MetadataEnvelope;
 
 class HeadersMetadataStrategy implements MetadataStrategyInterface
 {

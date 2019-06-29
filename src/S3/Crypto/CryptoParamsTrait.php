@@ -1,9 +1,9 @@
 <?php
-namespace ILAB_Aws\S3\Crypto;
+namespace ILABAmazon\S3\Crypto;
 
-use ILAB_Aws\Crypto\MaterialsProvider;
-use ILAB_Aws\Crypto\MetadataEnvelope;
-use ILAB_Aws\Crypto\MetadataStrategyInterface;
+use ILABAmazon\Crypto\MaterialsProvider;
+use ILABAmazon\Crypto\MetadataEnvelope;
+use ILABAmazon\Crypto\MetadataStrategyInterface;
 
 trait CryptoParamsTrait
 {

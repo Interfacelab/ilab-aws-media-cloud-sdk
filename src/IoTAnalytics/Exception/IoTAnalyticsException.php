@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\IoTAnalytics\Exception;
+namespace ILABAmazon\IoTAnalytics\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWS IoT Analytics** service.

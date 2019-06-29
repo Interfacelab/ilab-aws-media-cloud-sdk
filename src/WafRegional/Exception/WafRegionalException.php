@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\WafRegional\Exception;
+namespace ILABAmazon\WafRegional\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWS WAF Regional** service.

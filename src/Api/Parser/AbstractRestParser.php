@@ -1,11 +1,11 @@
 <?php
-namespace ILAB_Aws\Api\Parser;
+namespace ILABAmazon\Api\Parser;
 
-use ILAB_Aws\Api\DateTimeResult;
-use ILAB_Aws\Api\Shape;
-use ILAB_Aws\Api\StructureShape;
-use ILAB_Aws\Result;
-use ILAB_Aws\CommandInterface;
+use ILABAmazon\Api\DateTimeResult;
+use ILABAmazon\Api\Shape;
+use ILABAmazon\Api\StructureShape;
+use ILABAmazon\Result;
+use ILABAmazon\CommandInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -128,10 +128,21 @@ abstract class AbstractRestParser extends AbstractParser
                     return;
                 }
             case 'string':
-                if ($shape['jsonvalue']) {
-                    $value = $this->parseJson(base64_decode($value), $response);
+                try {
+                    if ($shape['jsonvalue']) {
+                        $value = $this->parseJson(base64_decode($value), $response);
+                    }
+
+                    // If value is not set, do not add to output structure.
+                    if (!isset($value)) {
+                        return;
+                    }
+                    break;
+                } catch (\Exception $e) {
+                    //If the value cannot be parsed, then do not add it to the
+                    //output structure.
+                    return;
                 }
-                break;
         }
 
         $result[$name] = $value;

@@ -1,11 +1,11 @@
 <?php
-namespace ILAB_Aws\KinesisVideoMedia;
+namespace ILABAmazon\KinesisVideoMedia;
 
-use ILAB_Aws\AwsClient;
+use ILABAmazon\AwsClient;
 
 /**
  * This client is used to interact with the **Amazon Kinesis Video Streams Media** service.
- * @method \ILAB_Aws\Result getMedia(array $args = [])
+ * @method \ILABAmazon\Result getMedia(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getMediaAsync(array $args = [])
  */
 class KinesisVideoMediaClient extends AwsClient {}

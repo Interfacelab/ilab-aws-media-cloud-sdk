@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\ElasticBeanstalk\Exception;
+namespace ILABAmazon\ElasticBeanstalk\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the AWS Elastic Beanstalk service.

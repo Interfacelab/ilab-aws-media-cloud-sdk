@@ -1,12 +1,12 @@
 <?php
 
-namespace ILAB_Aws\Api\Parser;
+namespace ILABAmazon\Api\Parser;
 
 use \Iterator;
-use ILAB_Aws\Api\DateTimeResult;
+use ILABAmazon\Api\DateTimeResult;
 use GuzzleHttp\Psr7;
 use Psr\Http\Message\StreamInterface;
-use ILAB_Aws\Api\Parser\Exception\ParserException;
+use ILABAmazon\Api\Parser\Exception\ParserException;
 
 /**
  * @internal Implements a decoder for a binary encoded event stream that will

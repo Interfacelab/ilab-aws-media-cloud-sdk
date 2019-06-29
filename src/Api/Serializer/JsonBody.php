@@ -1,9 +1,9 @@
 <?php
-namespace ILAB_Aws\Api\Serializer;
+namespace ILABAmazon\Api\Serializer;
 
-use ILAB_Aws\Api\Service;
-use ILAB_Aws\Api\Shape;
-use ILAB_Aws\Api\TimestampShape;
+use ILABAmazon\Api\Service;
+use ILABAmazon\Api\Shape;
+use ILABAmazon\Api\TimestampShape;
 
 /**
  * Formats the JSON body of a JSON-REST or JSON-RPC operation.

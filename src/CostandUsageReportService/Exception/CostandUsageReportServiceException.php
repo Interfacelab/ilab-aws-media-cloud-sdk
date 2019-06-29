@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\CostandUsageReportService\Exception;
+namespace ILABAmazon\CostandUsageReportService\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWS Cost and Usage Report Service** service.

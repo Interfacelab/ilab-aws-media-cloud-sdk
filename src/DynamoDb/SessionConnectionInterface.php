@@ -1,5 +1,5 @@
 <?php
-namespace ILAB_Aws\DynamoDb;
+namespace ILABAmazon\DynamoDb;
 
 /**
  * The session connection provides the underlying logic for interacting with

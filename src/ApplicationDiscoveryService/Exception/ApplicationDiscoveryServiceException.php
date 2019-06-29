@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\ApplicationDiscoveryService\Exception;
+namespace ILABAmazon\ApplicationDiscoveryService\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWS Application Discovery Service** service.

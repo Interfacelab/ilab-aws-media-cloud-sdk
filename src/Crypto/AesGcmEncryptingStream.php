@@ -1,5 +1,5 @@
 <?php
-namespace ILAB_Aws\Crypto;
+namespace ILABAmazon\Crypto;
 
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\StreamDecoratorTrait;

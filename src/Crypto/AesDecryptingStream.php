@@ -1,10 +1,10 @@
 <?php
-namespace ILAB_Aws\Crypto;
+namespace ILABAmazon\Crypto;
 
 use GuzzleHttp\Psr7\StreamDecoratorTrait;
 use \LogicException;
 use Psr\Http\Message\StreamInterface;
-use ILAB_Aws\Crypto\Cipher\CipherMethod;
+use ILABAmazon\Crypto\Cipher\CipherMethod;
 
 /**
  * @internal Represents a stream of data to be decrypted with passed cipher.

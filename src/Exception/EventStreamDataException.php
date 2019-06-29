@@ -1,5 +1,5 @@
 <?php
-namespace ILAB_Aws\Exception;
+namespace ILABAmazon\Exception;
 
 /**
  * Represents an exception that was supplied via an EventStream.

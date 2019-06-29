@@ -1,5 +1,5 @@
 <?php
-namespace ILAB_Aws\Handler\GuzzleV6;
+namespace ILABAmazon\Handler\GuzzleV6;
 
 use Exception;
 use GuzzleHttp\Exception\ConnectException;

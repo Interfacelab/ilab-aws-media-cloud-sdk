@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\MQ\Exception;
+namespace ILABAmazon\MQ\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AmazonMQ** service.

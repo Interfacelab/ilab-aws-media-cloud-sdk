@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\MarketplaceEntitlementService\Exception;
+namespace ILABAmazon\MarketplaceEntitlementService\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWS Marketplace Entitlement Service** service.

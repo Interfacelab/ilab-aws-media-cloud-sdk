@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\Macie\Exception;
+namespace ILABAmazon\Macie\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **Amazon Macie** service.

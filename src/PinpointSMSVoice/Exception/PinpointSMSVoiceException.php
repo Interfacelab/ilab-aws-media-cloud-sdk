@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\PinpointSMSVoice\Exception;
+namespace ILABAmazon\PinpointSMSVoice\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **Amazon Pinpoint SMS and Voice Service** service.

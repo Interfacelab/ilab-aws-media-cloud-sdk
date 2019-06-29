@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\S3Control\Exception;
+namespace ILABAmazon\S3Control\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWS S3 Control** service.

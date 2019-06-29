@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\KinesisVideo\Exception;
+namespace ILABAmazon\KinesisVideo\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **Amazon Kinesis Video Streams** service.

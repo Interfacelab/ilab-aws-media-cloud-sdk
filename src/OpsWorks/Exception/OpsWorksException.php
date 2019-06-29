@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\OpsWorks\Exception;
+namespace ILABAmazon\OpsWorks\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the AWS OpsWorks service.

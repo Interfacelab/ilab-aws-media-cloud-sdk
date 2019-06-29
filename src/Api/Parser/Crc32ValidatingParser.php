@@ -1,9 +1,9 @@
 <?php
-namespace ILAB_Aws\Api\Parser;
+namespace ILABAmazon\Api\Parser;
 
-use ILAB_Aws\Api\StructureShape;
-use ILAB_Aws\CommandInterface;
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Api\StructureShape;
+use ILABAmazon\CommandInterface;
+use ILABAmazon\Exception\AwsException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 use GuzzleHttp\Psr7;

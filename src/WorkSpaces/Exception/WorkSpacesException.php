@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\WorkSpaces\Exception;
+namespace ILABAmazon\WorkSpaces\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error while interacting with Amazon WorkSpaces.

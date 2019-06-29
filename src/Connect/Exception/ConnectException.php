@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\Connect\Exception;
+namespace ILABAmazon\Connect\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **Amazon Connect Service** service.

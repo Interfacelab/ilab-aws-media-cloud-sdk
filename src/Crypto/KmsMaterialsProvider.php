@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\Crypto;
+namespace ILABAmazon\Crypto;
 
-use ILAB_Aws\Kms\KmsClient;
+use ILABAmazon\Kms\KmsClient;
 
 /**
  * Uses KMS to supply materials for encrypting and decrypting data.

@@ -1,32 +1,32 @@
 <?php
-namespace ILAB_Aws\Polly;
+namespace ILABAmazon\Polly;
 
-use ILAB_Aws\Api\Serializer\JsonBody;
-use ILAB_Aws\AwsClient;
-use ILAB_Aws\Signature\SignatureV4;
+use ILABAmazon\Api\Serializer\JsonBody;
+use ILABAmazon\AwsClient;
+use ILABAmazon\Signature\SignatureV4;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Uri;
 use GuzzleHttp\Psr7;
 
 /**
  * This client is used to interact with the **Amazon Polly** service.
- * @method \ILAB_Aws\Result deleteLexicon(array $args = [])
+ * @method \ILABAmazon\Result deleteLexicon(array $args = [])
  * @method \GuzzleHttp\Promise\Promise deleteLexiconAsync(array $args = [])
- * @method \ILAB_Aws\Result describeVoices(array $args = [])
+ * @method \ILABAmazon\Result describeVoices(array $args = [])
  * @method \GuzzleHttp\Promise\Promise describeVoicesAsync(array $args = [])
- * @method \ILAB_Aws\Result getLexicon(array $args = [])
+ * @method \ILABAmazon\Result getLexicon(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getLexiconAsync(array $args = [])
- * @method \ILAB_Aws\Result getSpeechSynthesisTask(array $args = [])
+ * @method \ILABAmazon\Result getSpeechSynthesisTask(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getSpeechSynthesisTaskAsync(array $args = [])
- * @method \ILAB_Aws\Result listLexicons(array $args = [])
+ * @method \ILABAmazon\Result listLexicons(array $args = [])
  * @method \GuzzleHttp\Promise\Promise listLexiconsAsync(array $args = [])
- * @method \ILAB_Aws\Result listSpeechSynthesisTasks(array $args = [])
+ * @method \ILABAmazon\Result listSpeechSynthesisTasks(array $args = [])
  * @method \GuzzleHttp\Promise\Promise listSpeechSynthesisTasksAsync(array $args = [])
- * @method \ILAB_Aws\Result putLexicon(array $args = [])
+ * @method \ILABAmazon\Result putLexicon(array $args = [])
  * @method \GuzzleHttp\Promise\Promise putLexiconAsync(array $args = [])
- * @method \ILAB_Aws\Result startSpeechSynthesisTask(array $args = [])
+ * @method \ILABAmazon\Result startSpeechSynthesisTask(array $args = [])
  * @method \GuzzleHttp\Promise\Promise startSpeechSynthesisTaskAsync(array $args = [])
- * @method \ILAB_Aws\Result synthesizeSpeech(array $args = [])
+ * @method \ILABAmazon\Result synthesizeSpeech(array $args = [])
  * @method \GuzzleHttp\Promise\Promise synthesizeSpeechAsync(array $args = [])
  */
 class PollyClient extends AwsClient
@@ -38,7 +38,7 @@ class PollyClient extends AwsClient
      * Create a pre-signed URL for Polly operation `SynthesizeSpeech`
      *
      * @param array $args parameters array for `SynthesizeSpeech`
-     *                    More information @see Aws\Polly\PollyClient::SynthesizeSpeech
+     *                    More information @see ILABAmazon\Polly\PollyClient::SynthesizeSpeech
      *
      * @return string
      */

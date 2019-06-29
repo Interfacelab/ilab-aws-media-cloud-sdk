@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\MediaConvert\Exception;
+namespace ILABAmazon\MediaConvert\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWS Elemental MediaConvert** service.

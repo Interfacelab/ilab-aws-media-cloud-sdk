@@ -1,11 +1,11 @@
 <?php
 
-namespace ILAB_Aws\Api\Parser;
+namespace ILABAmazon\Api\Parser;
 
 use \Iterator;
-use ILAB_Aws\Exception\EventStreamDataException;
-use ILAB_Aws\Api\Parser\Exception\ParserException;
-use ILAB_Aws\Api\StructureShape;
+use ILABAmazon\Exception\EventStreamDataException;
+use ILABAmazon\Api\Parser\Exception\ParserException;
+use ILABAmazon\Api\StructureShape;
 use Psr\Http\Message\StreamInterface;
 
 /**

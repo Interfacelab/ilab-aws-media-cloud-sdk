@@ -1,5 +1,5 @@
 <?php
-namespace ILAB_Aws\Handler\GuzzleV5;
+namespace ILABAmazon\Handler\GuzzleV5;
 
 use Exception;
 use GuzzleHttp\Client;
@@ -26,14 +26,16 @@ use Psr\Http\Message\StreamInterface as Psr7StreamInterface;
 class GuzzleHandler
 {
     private static $validOptions = [
-        'proxy'           => true,
-        'verify'          => true,
-        'timeout'         => true,
-        'debug'           => true,
-        'connect_timeout' => true,
-        'stream'          => true,
-        'delay'           => true,
-        'sink'            => true,
+        'proxy'             => true,
+        'expect'            => true,
+        'cert'              => true,
+        'verify'            => true,
+        'timeout'           => true,
+        'debug'             => true,
+        'connect_timeout'   => true,
+        'stream'            => true,
+        'delay'             => true,
+        'sink'              => true,
     ];
 
     /** @var ClientInterface */

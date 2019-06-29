@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\MachineLearning\Exception;
+namespace ILABAmazon\MachineLearning\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Amazon Machine Learning exception.

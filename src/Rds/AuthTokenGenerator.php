@@ -1,9 +1,9 @@
 <?php
-namespace ILAB_Aws\Rds;
+namespace ILABAmazon\Rds;
 
-use ILAB_Aws\Credentials\CredentialsInterface;
-use ILAB_Aws\Credentials\Credentials;
-use ILAB_Aws\Signature\SignatureV4;
+use ILABAmazon\Credentials\CredentialsInterface;
+use ILABAmazon\Credentials\Credentials;
+use ILABAmazon\Signature\SignatureV4;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Uri;
 use GuzzleHttp\Promise;
@@ -26,7 +26,7 @@ class AuthTokenGenerator
     {
         if ($creds instanceof CredentialsInterface) {
             $promise = new Promise\FulfilledPromise($creds);
-            $this->credentialProvider = Aws\constantly($promise);
+            $this->credentialProvider = ILABAmazon\constantly($promise);
         } else {
             $this->credentialProvider = $creds;
         }

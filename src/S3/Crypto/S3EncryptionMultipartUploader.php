@@ -1,12 +1,12 @@
 <?php
-namespace ILAB_Aws\S3\Crypto;
+namespace ILABAmazon\S3\Crypto;
 
-use ILAB_Aws\Crypto\AbstractCryptoClient;
-use ILAB_Aws\Crypto\EncryptionTrait;
-use ILAB_Aws\Crypto\MetadataEnvelope;
-use ILAB_Aws\Crypto\Cipher\CipherBuilderTrait;
-use ILAB_Aws\S3\MultipartUploader;
-use ILAB_Aws\S3\S3ClientInterface;
+use ILABAmazon\Crypto\AbstractCryptoClient;
+use ILABAmazon\Crypto\EncryptionTrait;
+use ILABAmazon\Crypto\MetadataEnvelope;
+use ILABAmazon\Crypto\Cipher\CipherBuilderTrait;
+use ILABAmazon\S3\MultipartUploader;
+use ILABAmazon\S3\S3ClientInterface;
 use GuzzleHttp\Promise;
 
 /**

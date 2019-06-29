@@ -1,13 +1,13 @@
 <?php
-namespace ILAB_Aws\Exception;
+namespace ILABAmazon\Exception;
 
-use ILAB_Aws\HasMonitoringEventsTrait;
-use ILAB_Aws\MonitoringEventsInterface;
-use ILAB_Aws\ResponseContainerInterface;
+use ILABAmazon\HasMonitoringEventsTrait;
+use ILABAmazon\MonitoringEventsInterface;
+use ILABAmazon\ResponseContainerInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\RequestInterface;
-use ILAB_Aws\CommandInterface;
-use ILAB_Aws\ResultInterface;
+use ILABAmazon\CommandInterface;
+use ILABAmazon\ResultInterface;
 
 /**
  * Represents an AWS exception that is thrown when a command fails.

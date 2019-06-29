@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\LexModelBuildingService\Exception;
+namespace ILABAmazon\LexModelBuildingService\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **Amazon Lex Model Building Service** service.

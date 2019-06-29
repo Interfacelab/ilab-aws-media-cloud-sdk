@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\Greengrass\Exception;
+namespace ILABAmazon\Greengrass\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWS Greengrass** service.

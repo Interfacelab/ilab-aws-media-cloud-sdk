@@ -1,19 +1,21 @@
 <?php
-namespace ILAB_Aws\AutoScalingPlans;
+namespace ILABAmazon\AutoScalingPlans;
 
-use ILAB_Aws\AwsClient;
+use ILABAmazon\AwsClient;
 
 /**
  * This client is used to interact with the **AWS Auto Scaling Plans** service.
- * @method \ILAB_Aws\Result createScalingPlan(array $args = [])
+ * @method \ILABAmazon\Result createScalingPlan(array $args = [])
  * @method \GuzzleHttp\Promise\Promise createScalingPlanAsync(array $args = [])
- * @method \ILAB_Aws\Result deleteScalingPlan(array $args = [])
+ * @method \ILABAmazon\Result deleteScalingPlan(array $args = [])
  * @method \GuzzleHttp\Promise\Promise deleteScalingPlanAsync(array $args = [])
- * @method \ILAB_Aws\Result describeScalingPlanResources(array $args = [])
+ * @method \ILABAmazon\Result describeScalingPlanResources(array $args = [])
  * @method \GuzzleHttp\Promise\Promise describeScalingPlanResourcesAsync(array $args = [])
- * @method \ILAB_Aws\Result describeScalingPlans(array $args = [])
+ * @method \ILABAmazon\Result describeScalingPlans(array $args = [])
  * @method \GuzzleHttp\Promise\Promise describeScalingPlansAsync(array $args = [])
- * @method \ILAB_Aws\Result updateScalingPlan(array $args = [])
+ * @method \ILABAmazon\Result getScalingPlanResourceForecastData(array $args = [])
+ * @method \GuzzleHttp\Promise\Promise getScalingPlanResourceForecastDataAsync(array $args = [])
+ * @method \ILABAmazon\Result updateScalingPlan(array $args = [])
  * @method \GuzzleHttp\Promise\Promise updateScalingPlanAsync(array $args = [])
  */
 class AutoScalingPlansClient extends AwsClient {}

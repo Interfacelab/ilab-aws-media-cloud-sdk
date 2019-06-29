@@ -1,8 +1,8 @@
 <?php
-namespace ILAB_Aws\Crypto;
+namespace ILABAmazon\Crypto;
 
-use ILAB_Aws\Crypto\Cipher\CipherMethod;
-use ILAB_Aws\Crypto\Cipher\Cbc;
+use ILABAmazon\Crypto\Cipher\CipherMethod;
+use ILABAmazon\Crypto\Cipher\Cbc;
 use GuzzleHttp\Psr7\Stream;
 
 /**

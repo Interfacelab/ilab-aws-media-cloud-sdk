@@ -1,11 +1,11 @@
 <?php
-namespace ILAB_Aws\MarketplaceEntitlementService;
+namespace ILABAmazon\MarketplaceEntitlementService;
 
-use ILAB_Aws\AwsClient;
+use ILABAmazon\AwsClient;
 
 /**
  * This client is used to interact with the **AWS Marketplace Entitlement Service** service.
- * @method \ILAB_Aws\Result getEntitlements(array $args = [])
+ * @method \ILABAmazon\Result getEntitlements(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getEntitlementsAsync(array $args = [])
  */
 class MarketplaceEntitlementServiceClient extends AwsClient {}

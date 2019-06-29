@@ -1,35 +1,41 @@
 <?php
-namespace ILAB_Aws\IoT1ClickProjects;
+namespace ILABAmazon\IoT1ClickProjects;
 
-use ILAB_Aws\AwsClient;
+use ILABAmazon\AwsClient;
 
 /**
  * This client is used to interact with the **AWS IoT 1-Click Projects Service** service.
- * @method \ILAB_Aws\Result associateDeviceWithPlacement(array $args = [])
+ * @method \ILABAmazon\Result associateDeviceWithPlacement(array $args = [])
  * @method \GuzzleHttp\Promise\Promise associateDeviceWithPlacementAsync(array $args = [])
- * @method \ILAB_Aws\Result createPlacement(array $args = [])
+ * @method \ILABAmazon\Result createPlacement(array $args = [])
  * @method \GuzzleHttp\Promise\Promise createPlacementAsync(array $args = [])
- * @method \ILAB_Aws\Result createProject(array $args = [])
+ * @method \ILABAmazon\Result createProject(array $args = [])
  * @method \GuzzleHttp\Promise\Promise createProjectAsync(array $args = [])
- * @method \ILAB_Aws\Result deletePlacement(array $args = [])
+ * @method \ILABAmazon\Result deletePlacement(array $args = [])
  * @method \GuzzleHttp\Promise\Promise deletePlacementAsync(array $args = [])
- * @method \ILAB_Aws\Result deleteProject(array $args = [])
+ * @method \ILABAmazon\Result deleteProject(array $args = [])
  * @method \GuzzleHttp\Promise\Promise deleteProjectAsync(array $args = [])
- * @method \ILAB_Aws\Result describePlacement(array $args = [])
+ * @method \ILABAmazon\Result describePlacement(array $args = [])
  * @method \GuzzleHttp\Promise\Promise describePlacementAsync(array $args = [])
- * @method \ILAB_Aws\Result describeProject(array $args = [])
+ * @method \ILABAmazon\Result describeProject(array $args = [])
  * @method \GuzzleHttp\Promise\Promise describeProjectAsync(array $args = [])
- * @method \ILAB_Aws\Result disassociateDeviceFromPlacement(array $args = [])
+ * @method \ILABAmazon\Result disassociateDeviceFromPlacement(array $args = [])
  * @method \GuzzleHttp\Promise\Promise disassociateDeviceFromPlacementAsync(array $args = [])
- * @method \ILAB_Aws\Result getDevicesInPlacement(array $args = [])
+ * @method \ILABAmazon\Result getDevicesInPlacement(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getDevicesInPlacementAsync(array $args = [])
- * @method \ILAB_Aws\Result listPlacements(array $args = [])
+ * @method \ILABAmazon\Result listPlacements(array $args = [])
  * @method \GuzzleHttp\Promise\Promise listPlacementsAsync(array $args = [])
- * @method \ILAB_Aws\Result listProjects(array $args = [])
+ * @method \ILABAmazon\Result listProjects(array $args = [])
  * @method \GuzzleHttp\Promise\Promise listProjectsAsync(array $args = [])
- * @method \ILAB_Aws\Result updatePlacement(array $args = [])
+ * @method \ILABAmazon\Result listTagsForResource(array $args = [])
+ * @method \GuzzleHttp\Promise\Promise listTagsForResourceAsync(array $args = [])
+ * @method \ILABAmazon\Result tagResource(array $args = [])
+ * @method \GuzzleHttp\Promise\Promise tagResourceAsync(array $args = [])
+ * @method \ILABAmazon\Result untagResource(array $args = [])
+ * @method \GuzzleHttp\Promise\Promise untagResourceAsync(array $args = [])
+ * @method \ILABAmazon\Result updatePlacement(array $args = [])
  * @method \GuzzleHttp\Promise\Promise updatePlacementAsync(array $args = [])
- * @method \ILAB_Aws\Result updateProject(array $args = [])
+ * @method \ILABAmazon\Result updateProject(array $args = [])
  * @method \GuzzleHttp\Promise\Promise updateProjectAsync(array $args = [])
  */
 class IoT1ClickProjectsClient extends AwsClient {}

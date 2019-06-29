@@ -23,8 +23,7 @@
         "mtdowling/jmespath.php": "~2.2",
         "ext-pcre": "*",
         "ext-json": "*",
-        "ext-simplexml": "*",
-        "ext-spl": "*"
+        "ext-simplexml": "*"
     },
     "require-dev": {
         "ext-openssl": "*",
@@ -37,7 +36,8 @@
         "aws/aws-php-sns-message-validator": "~1.0",
         "nette/neon": "^2.3",
         "andrewsville/php-token-reflection": "^1.4",
-        "psr/cache": "^1.0"
+        "psr/cache": "^1.0",
+        "psr/simple-cache": "^1.0"
     },
     "suggest": {
         "ext-openssl": "Allows working with CloudFront private distributions and verifying received SNS messages",
@@ -48,14 +48,19 @@
     },
     "autoload": {
         "psr-4": {
-            "ILAB_Aws\\": "src/"
+            "ILABAmazon\\": "src/"
         },
         "files": ["src/functions.php"]
     },
     "autoload-dev": {
         "psr-4": {
-            "ILAB_Aws\\Test\\": "tests/"
+            "ILABAmazon\\Test\\": "tests/"
         },
         "classmap": ["build/"]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.0-dev"
+        }
     }
 }

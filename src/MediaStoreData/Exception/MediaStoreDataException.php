@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\MediaStoreData\Exception;
+namespace ILABAmazon\MediaStoreData\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWS Elemental MediaStore Data Plane** service.

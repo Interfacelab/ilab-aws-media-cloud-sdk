@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\S3;
+namespace ILABAmazon\S3;
 
-use ILAB_Aws\Credentials\CredentialsInterface;
+use ILABAmazon\Credentials\CredentialsInterface;
 use GuzzleHttp\Psr7\Uri;
 
 /**

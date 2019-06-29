@@ -1,16 +1,26 @@
 <?php
-namespace ILAB_Aws\S3Control;
+namespace ILABAmazon\S3Control;
 
-use ILAB_Aws\AwsClient;
+use ILABAmazon\AwsClient;
 
 /**
  * This client is used to interact with the **AWS S3 Control** service.
- * @method \ILAB_Aws\Result deletePublicAccessBlock(array $args = [])
+ * @method \ILABAmazon\Result createJob(array $args = [])
+ * @method \GuzzleHttp\Promise\Promise createJobAsync(array $args = [])
+ * @method \ILABAmazon\Result deletePublicAccessBlock(array $args = [])
  * @method \GuzzleHttp\Promise\Promise deletePublicAccessBlockAsync(array $args = [])
- * @method \ILAB_Aws\Result getPublicAccessBlock(array $args = [])
+ * @method \ILABAmazon\Result describeJob(array $args = [])
+ * @method \GuzzleHttp\Promise\Promise describeJobAsync(array $args = [])
+ * @method \ILABAmazon\Result getPublicAccessBlock(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getPublicAccessBlockAsync(array $args = [])
- * @method \ILAB_Aws\Result putPublicAccessBlock(array $args = [])
+ * @method \ILABAmazon\Result listJobs(array $args = [])
+ * @method \GuzzleHttp\Promise\Promise listJobsAsync(array $args = [])
+ * @method \ILABAmazon\Result putPublicAccessBlock(array $args = [])
  * @method \GuzzleHttp\Promise\Promise putPublicAccessBlockAsync(array $args = [])
+ * @method \ILABAmazon\Result updateJobPriority(array $args = [])
+ * @method \GuzzleHttp\Promise\Promise updateJobPriorityAsync(array $args = [])
+ * @method \ILABAmazon\Result updateJobStatus(array $args = [])
+ * @method \GuzzleHttp\Promise\Promise updateJobStatusAsync(array $args = [])
  */
 class S3ControlClient extends AwsClient 
 {
@@ -34,7 +44,7 @@ class S3ControlClient extends AwsClient
      * {@inheritdoc}
      *
      * In addition to the options available to
-     * {@see Aws\AwsClient::__construct}, S3ControlClient accepts the following
+     * {@see ILABAmazon\AwsClient::__construct}, S3ControlClient accepts the following
      * option:
      *
      * - use_dual_stack_endpoint: (bool) Set to true to send requests to an S3

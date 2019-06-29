@@ -1,6 +1,6 @@
 <?php
 
-namespace ILAB_Aws;
+namespace ILABAmazon;
 
 interface ResponseContainerInterface
 {

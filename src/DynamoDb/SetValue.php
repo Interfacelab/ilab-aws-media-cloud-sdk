@@ -1,5 +1,5 @@
 <?php
-namespace ILAB_Aws\DynamoDb;
+namespace ILABAmazon\DynamoDb;
 
 /**
  * Special object to represent a DynamoDB set (SS/NS/BS) value.

@@ -1,15 +1,15 @@
 <?php
-namespace ILAB_Aws\S3\Crypto;
+namespace ILABAmazon\S3\Crypto;
 
-use ILAB_Aws\HashingStream;
-use ILAB_Aws\PhpHash;
-use ILAB_Aws\Crypto\AbstractCryptoClient;
-use ILAB_Aws\Crypto\EncryptionTrait;
-use ILAB_Aws\Crypto\DecryptionTrait;
-use ILAB_Aws\Crypto\MetadataEnvelope;
-use ILAB_Aws\Crypto\MaterialsProvider;
-use ILAB_Aws\Crypto\Cipher\CipherBuilderTrait;
-use ILAB_Aws\S3\S3Client;
+use ILABAmazon\HashingStream;
+use ILABAmazon\PhpHash;
+use ILABAmazon\Crypto\AbstractCryptoClient;
+use ILABAmazon\Crypto\EncryptionTrait;
+use ILABAmazon\Crypto\DecryptionTrait;
+use ILABAmazon\Crypto\MetadataEnvelope;
+use ILABAmazon\Crypto\MaterialsProvider;
+use ILABAmazon\Crypto\Cipher\CipherBuilderTrait;
+use ILABAmazon\S3\S3Client;
 use GuzzleHttp\Promise;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7;
@@ -168,7 +168,7 @@ class S3EncryptionClient extends AbstractCryptoClient
      *   instruction file if an using an InstructionFileMetadataHandler was
      *   determined.
      *
-     * @return \ILAB_Aws\Result PutObject call result with the details of uploading
+     * @return \ILABAmazon\Result PutObject call result with the details of uploading
      *                     the encrypted file.
      *
      * @throws \InvalidArgumentException Thrown when arguments above are not
@@ -303,7 +303,7 @@ class S3EncryptionClient extends AbstractCryptoClient
      *            passed directly to OpenSSL when using gcm. It is ignored when
      *            using cbc.
      *
-     * @return \ILAB_Aws\Result GetObject call result with the 'Body' field
+     * @return \ILABAmazon\Result GetObject call result with the 'Body' field
      *                     wrapped in a decryption stream with its metadata
      *                     information.
      *

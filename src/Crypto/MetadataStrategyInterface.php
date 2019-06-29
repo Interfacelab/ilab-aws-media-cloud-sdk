@@ -1,5 +1,5 @@
 <?php
-namespace ILAB_Aws\Crypto;
+namespace ILABAmazon\Crypto;
 
 interface MetadataStrategyInterface
 {

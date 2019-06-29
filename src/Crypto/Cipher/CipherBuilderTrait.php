@@ -1,5 +1,5 @@
 <?php
-namespace ILAB_Aws\Crypto\Cipher;
+namespace ILABAmazon\Crypto\Cipher;
 
 trait CipherBuilderTrait
 {

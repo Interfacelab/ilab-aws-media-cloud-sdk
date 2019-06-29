@@ -1,8 +1,8 @@
 <?php
-namespace ILAB_Aws\CloudTrail;
+namespace ILABAmazon\CloudTrail;
 
-use ILAB_Aws\S3\S3Client;
-use ILAB_Aws\CloudTrail\Exception\CloudTrailException;
+use ILABAmazon\S3\S3Client;
+use ILABAmazon\CloudTrail\Exception\CloudTrailException;
 
 /**
  * The `Aws\CloudTrail\LogFileIterator` provides an easy way to iterate over

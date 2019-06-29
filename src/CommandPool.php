@@ -1,5 +1,5 @@
 <?php
-namespace ILAB_Aws;
+namespace ILABAmazon;
 
 use GuzzleHttp\Promise\PromisorInterface;
 use GuzzleHttp\Promise\EachPromise;
@@ -55,7 +55,7 @@ class CommandPool implements PromisorInterface
             foreach ($commands as $key => $command) {
                 if (!($command instanceof CommandInterface)) {
                     throw new \InvalidArgumentException('Each value yielded by '
-                        . 'the iterator must be an Aws\CommandInterface.');
+                        . 'the iterator must be an ILABAmazon\CommandInterface.');
                 }
                 if ($before) {
                     $before($command, $key);
@@ -88,7 +88,7 @@ class CommandPool implements PromisorInterface
      * @param array              $config   Configuration options.
      *
      * @return array
-     * @see \ILAB_Aws\CommandPool::__construct for available configuration options.
+     * @see \ILABAmazon\CommandPool::__construct for available configuration options.
      */
     public static function batch(
         AwsClientInterface $client,

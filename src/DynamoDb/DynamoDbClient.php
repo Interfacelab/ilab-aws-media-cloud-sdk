@@ -1,83 +1,88 @@
 <?php
-namespace ILAB_Aws\DynamoDb;
+namespace ILABAmazon\DynamoDb;
 
-use ILAB_Aws\Api\Parser\Crc32ValidatingParser;
-use ILAB_Aws\AwsClient;
-use ILAB_Aws\ClientResolver;
-use ILAB_Aws\HandlerList;
-use ILAB_Aws\Middleware;
-use ILAB_Aws\RetryMiddleware;
+use ILABAmazon\Api\Parser\Crc32ValidatingParser;
+use ILABAmazon\AwsClient;
+use ILABAmazon\ClientResolver;
+use ILABAmazon\Exception\AwsException;
+use ILABAmazon\HandlerList;
+use ILABAmazon\Middleware;
+use ILABAmazon\RetryMiddleware;
 
 /**
  * This client is used to interact with the **Amazon DynamoDB** service.
  *
- * @method \ILAB_Aws\Result batchGetItem(array $args = [])
+ * @method \ILABAmazon\Result batchGetItem(array $args = [])
  * @method \GuzzleHttp\Promise\Promise batchGetItemAsync(array $args = [])
- * @method \ILAB_Aws\Result batchWriteItem(array $args = [])
+ * @method \ILABAmazon\Result batchWriteItem(array $args = [])
  * @method \GuzzleHttp\Promise\Promise batchWriteItemAsync(array $args = [])
- * @method \ILAB_Aws\Result createTable(array $args = [])
+ * @method \ILABAmazon\Result createTable(array $args = [])
  * @method \GuzzleHttp\Promise\Promise createTableAsync(array $args = [])
- * @method \ILAB_Aws\Result deleteItem(array $args = [])
+ * @method \ILABAmazon\Result deleteItem(array $args = [])
  * @method \GuzzleHttp\Promise\Promise deleteItemAsync(array $args = [])
- * @method \ILAB_Aws\Result deleteTable(array $args = [])
+ * @method \ILABAmazon\Result deleteTable(array $args = [])
  * @method \GuzzleHttp\Promise\Promise deleteTableAsync(array $args = [])
- * @method \ILAB_Aws\Result describeTable(array $args = [])
+ * @method \ILABAmazon\Result describeTable(array $args = [])
  * @method \GuzzleHttp\Promise\Promise describeTableAsync(array $args = [])
- * @method \ILAB_Aws\Result getItem(array $args = [])
+ * @method \ILABAmazon\Result getItem(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getItemAsync(array $args = [])
- * @method \ILAB_Aws\Result listTables(array $args = [])
+ * @method \ILABAmazon\Result listTables(array $args = [])
  * @method \GuzzleHttp\Promise\Promise listTablesAsync(array $args = [])
- * @method \ILAB_Aws\Result putItem(array $args = [])
+ * @method \ILABAmazon\Result putItem(array $args = [])
  * @method \GuzzleHttp\Promise\Promise putItemAsync(array $args = [])
- * @method \ILAB_Aws\Result query(array $args = [])
+ * @method \ILABAmazon\Result query(array $args = [])
  * @method \GuzzleHttp\Promise\Promise queryAsync(array $args = [])
- * @method \ILAB_Aws\Result scan(array $args = [])
+ * @method \ILABAmazon\Result scan(array $args = [])
  * @method \GuzzleHttp\Promise\Promise scanAsync(array $args = [])
- * @method \ILAB_Aws\Result updateItem(array $args = [])
+ * @method \ILABAmazon\Result updateItem(array $args = [])
  * @method \GuzzleHttp\Promise\Promise updateItemAsync(array $args = [])
- * @method \ILAB_Aws\Result updateTable(array $args = [])
+ * @method \ILABAmazon\Result updateTable(array $args = [])
  * @method \GuzzleHttp\Promise\Promise updateTableAsync(array $args = [])
- * @method \ILAB_Aws\Result createBackup(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result createBackup(array $args = []) (supported in versions 2012-08-10)
  * @method \GuzzleHttp\Promise\Promise createBackupAsync(array $args = []) (supported in versions 2012-08-10)
- * @method \ILAB_Aws\Result createGlobalTable(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result createGlobalTable(array $args = []) (supported in versions 2012-08-10)
  * @method \GuzzleHttp\Promise\Promise createGlobalTableAsync(array $args = []) (supported in versions 2012-08-10)
- * @method \ILAB_Aws\Result deleteBackup(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result deleteBackup(array $args = []) (supported in versions 2012-08-10)
  * @method \GuzzleHttp\Promise\Promise deleteBackupAsync(array $args = []) (supported in versions 2012-08-10)
- * @method \ILAB_Aws\Result describeBackup(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result describeBackup(array $args = []) (supported in versions 2012-08-10)
  * @method \GuzzleHttp\Promise\Promise describeBackupAsync(array $args = []) (supported in versions 2012-08-10)
- * @method \ILAB_Aws\Result describeContinuousBackups(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result describeContinuousBackups(array $args = []) (supported in versions 2012-08-10)
  * @method \GuzzleHttp\Promise\Promise describeContinuousBackupsAsync(array $args = []) (supported in versions 2012-08-10)
- * @method \ILAB_Aws\Result describeEndpoints(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result describeEndpoints(array $args = []) (supported in versions 2012-08-10)
  * @method \GuzzleHttp\Promise\Promise describeEndpointsAsync(array $args = []) (supported in versions 2012-08-10)
- * @method \ILAB_Aws\Result describeGlobalTable(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result describeGlobalTable(array $args = []) (supported in versions 2012-08-10)
  * @method \GuzzleHttp\Promise\Promise describeGlobalTableAsync(array $args = []) (supported in versions 2012-08-10)
- * @method \ILAB_Aws\Result describeGlobalTableSettings(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result describeGlobalTableSettings(array $args = []) (supported in versions 2012-08-10)
  * @method \GuzzleHttp\Promise\Promise describeGlobalTableSettingsAsync(array $args = []) (supported in versions 2012-08-10)
- * @method \ILAB_Aws\Result describeLimits(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result describeLimits(array $args = []) (supported in versions 2012-08-10)
  * @method \GuzzleHttp\Promise\Promise describeLimitsAsync(array $args = []) (supported in versions 2012-08-10)
- * @method \ILAB_Aws\Result describeTimeToLive(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result describeTimeToLive(array $args = []) (supported in versions 2012-08-10)
  * @method \GuzzleHttp\Promise\Promise describeTimeToLiveAsync(array $args = []) (supported in versions 2012-08-10)
- * @method \ILAB_Aws\Result listBackups(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result listBackups(array $args = []) (supported in versions 2012-08-10)
  * @method \GuzzleHttp\Promise\Promise listBackupsAsync(array $args = []) (supported in versions 2012-08-10)
- * @method \ILAB_Aws\Result listGlobalTables(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result listGlobalTables(array $args = []) (supported in versions 2012-08-10)
  * @method \GuzzleHttp\Promise\Promise listGlobalTablesAsync(array $args = []) (supported in versions 2012-08-10)
- * @method \ILAB_Aws\Result listTagsOfResource(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result listTagsOfResource(array $args = []) (supported in versions 2012-08-10)
  * @method \GuzzleHttp\Promise\Promise listTagsOfResourceAsync(array $args = []) (supported in versions 2012-08-10)
- * @method \ILAB_Aws\Result restoreTableFromBackup(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result restoreTableFromBackup(array $args = []) (supported in versions 2012-08-10)
  * @method \GuzzleHttp\Promise\Promise restoreTableFromBackupAsync(array $args = []) (supported in versions 2012-08-10)
- * @method \ILAB_Aws\Result restoreTableToPointInTime(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result restoreTableToPointInTime(array $args = []) (supported in versions 2012-08-10)
  * @method \GuzzleHttp\Promise\Promise restoreTableToPointInTimeAsync(array $args = []) (supported in versions 2012-08-10)
- * @method \ILAB_Aws\Result tagResource(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result tagResource(array $args = []) (supported in versions 2012-08-10)
  * @method \GuzzleHttp\Promise\Promise tagResourceAsync(array $args = []) (supported in versions 2012-08-10)
- * @method \ILAB_Aws\Result untagResource(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result transactGetItems(array $args = []) (supported in versions 2012-08-10)
+ * @method \GuzzleHttp\Promise\Promise transactGetItemsAsync(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result transactWriteItems(array $args = []) (supported in versions 2012-08-10)
+ * @method \GuzzleHttp\Promise\Promise transactWriteItemsAsync(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result untagResource(array $args = []) (supported in versions 2012-08-10)
  * @method \GuzzleHttp\Promise\Promise untagResourceAsync(array $args = []) (supported in versions 2012-08-10)
- * @method \ILAB_Aws\Result updateContinuousBackups(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result updateContinuousBackups(array $args = []) (supported in versions 2012-08-10)
  * @method \GuzzleHttp\Promise\Promise updateContinuousBackupsAsync(array $args = []) (supported in versions 2012-08-10)
- * @method \ILAB_Aws\Result updateGlobalTable(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result updateGlobalTable(array $args = []) (supported in versions 2012-08-10)
  * @method \GuzzleHttp\Promise\Promise updateGlobalTableAsync(array $args = []) (supported in versions 2012-08-10)
- * @method \ILAB_Aws\Result updateGlobalTableSettings(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result updateGlobalTableSettings(array $args = []) (supported in versions 2012-08-10)
  * @method \GuzzleHttp\Promise\Promise updateGlobalTableSettingsAsync(array $args = []) (supported in versions 2012-08-10)
- * @method \ILAB_Aws\Result updateTimeToLive(array $args = []) (supported in versions 2012-08-10)
+ * @method \ILABAmazon\Result updateTimeToLive(array $args = []) (supported in versions 2012-08-10)
  * @method \GuzzleHttp\Promise\Promise updateTimeToLiveAsync(array $args = []) (supported in versions 2012-08-10)
  */
 class DynamoDbClient extends AwsClient
@@ -117,7 +122,10 @@ class DynamoDbClient extends AwsClient
 
         $list->appendSign(
             Middleware::retry(
-                RetryMiddleware::createDefaultDecider($value),
+                RetryMiddleware::createDefaultDecider(
+                    $value,
+                    ['errorCodes' => ['TransactionInProgressException']]
+                ),
                 function ($retries) {
                     return $retries
                         ? RetryMiddleware::exponentialDelay($retries) / 2

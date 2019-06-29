@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\ServiceDiscovery\Exception;
+namespace ILABAmazon\ServiceDiscovery\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **Amazon Route 53 Auto Naming** service.

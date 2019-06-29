@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\Support\Exception;
+namespace ILABAmazon\Support\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * AWS Support service exception.

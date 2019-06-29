@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\ElasticLoadBalancing\Exception;
+namespace ILABAmazon\ElasticLoadBalancing\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the Elastic Load Balancing service.

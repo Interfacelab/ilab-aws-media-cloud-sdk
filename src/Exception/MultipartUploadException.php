@@ -1,9 +1,9 @@
 <?php
-namespace ILAB_Aws\Exception;
+namespace ILABAmazon\Exception;
 
-use ILAB_Aws\HasMonitoringEventsTrait;
-use ILAB_Aws\MonitoringEventsInterface;
-use ILAB_Aws\Multipart\UploadState;
+use ILABAmazon\HasMonitoringEventsTrait;
+use ILABAmazon\MonitoringEventsInterface;
+use ILABAmazon\Multipart\UploadState;
 
 class MultipartUploadException extends \RuntimeException implements
     MonitoringEventsInterface

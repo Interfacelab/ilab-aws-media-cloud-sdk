@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\FMS\Exception;
+namespace ILABAmazon\FMS\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **Firewall Management Service** service.

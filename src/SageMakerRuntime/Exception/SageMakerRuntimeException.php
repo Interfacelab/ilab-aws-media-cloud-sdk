@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\SageMakerRuntime\Exception;
+namespace ILABAmazon\SageMakerRuntime\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **Amazon SageMaker Runtime** service.

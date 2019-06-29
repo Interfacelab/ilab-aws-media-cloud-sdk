@@ -1,8 +1,8 @@
 <?php
-namespace ILAB_Aws\Signature;
+namespace ILABAmazon\Signature;
 
-use ILAB_Aws\Credentials\CredentialsInterface;
-use ILAB_Aws\Exception\CouldNotCreateChecksumException;
+use ILABAmazon\Credentials\CredentialsInterface;
+use ILABAmazon\Exception\CouldNotCreateChecksumException;
 use GuzzleHttp\Psr7;
 use Psr\Http\Message\RequestInterface;
 

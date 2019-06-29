@@ -1,9 +1,9 @@
 <?php
-namespace ILAB_Aws\Credentials;
+namespace ILABAmazon\Credentials;
 
-use ILAB_Aws\Exception\CredentialsException;
-use ILAB_Aws\Result;
-use ILAB_Aws\Sts\StsClient;
+use ILABAmazon\Exception\CredentialsException;
+use ILABAmazon\Result;
+use ILABAmazon\Sts\StsClient;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**

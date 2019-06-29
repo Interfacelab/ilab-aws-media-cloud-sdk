@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\RAM\Exception;
+namespace ILABAmazon\RAM\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWS Resource Access Manager** service.

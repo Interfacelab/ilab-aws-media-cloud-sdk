@@ -1,8 +1,8 @@
 <?php
-namespace ILAB_Aws\ClientSideMonitoring\Exception;
+namespace ILABAmazon\ClientSideMonitoring\Exception;
 
-use ILAB_Aws\HasMonitoringEventsTrait;
-use ILAB_Aws\MonitoringEventsInterface;
+use ILABAmazon\HasMonitoringEventsTrait;
+use ILABAmazon\MonitoringEventsInterface;
 
 
 /**

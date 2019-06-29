@@ -1,19 +1,19 @@
 <?php
-namespace ILAB_Aws\DynamoDbStreams;
+namespace ILABAmazon\DynamoDbStreams;
 
-use ILAB_Aws\AwsClient;
-use ILAB_Aws\DynamoDb\DynamoDbClient;
+use ILABAmazon\AwsClient;
+use ILABAmazon\DynamoDb\DynamoDbClient;
 
 /**
  * This client is used to interact with the **Amazon DynamoDb Streams** service.
  *
- * @method \ILAB_Aws\Result describeStream(array $args = [])
+ * @method \ILABAmazon\Result describeStream(array $args = [])
  * @method \GuzzleHttp\Promise\Promise describeStreamAsync(array $args = [])
- * @method \ILAB_Aws\Result getRecords(array $args = [])
+ * @method \ILABAmazon\Result getRecords(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getRecordsAsync(array $args = [])
- * @method \ILAB_Aws\Result getShardIterator(array $args = [])
+ * @method \ILABAmazon\Result getShardIterator(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getShardIteratorAsync(array $args = [])
- * @method \ILAB_Aws\Result listStreams(array $args = [])
+ * @method \ILABAmazon\Result listStreams(array $args = [])
  * @method \GuzzleHttp\Promise\Promise listStreamsAsync(array $args = [])
  */
 class DynamoDbStreamsClient extends AwsClient

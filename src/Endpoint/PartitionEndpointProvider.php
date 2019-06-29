@@ -1,5 +1,5 @@
 <?php
-namespace ILAB_Aws\Endpoint;
+namespace ILABAmazon\Endpoint;
 
 use JmesPath\Env;
 
@@ -72,8 +72,8 @@ class PartitionEndpointProvider
      */
     public static function defaultProvider()
     {
-        $data = \ILAB_Aws\load_compiled_json(__DIR__ . '/../data/endpoints.json');
-        $prefixData = \ILAB_Aws\load_compiled_json(__DIR__ . '/../data/endpoints_prefix_history.json');
+        $data = \ILABAmazon\load_compiled_json(__DIR__ . '/../data/endpoints.json');
+        $prefixData = \ILABAmazon\load_compiled_json(__DIR__ . '/../data/endpoints_prefix_history.json');
         $mergedData = self::mergePrefixData($data, $prefixData);
 
         return new self($mergedData['partitions']);

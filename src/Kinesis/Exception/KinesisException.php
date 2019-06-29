@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\Kinesis\Exception;
+namespace ILABAmazon\Kinesis\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the Amazon Kinesis service.

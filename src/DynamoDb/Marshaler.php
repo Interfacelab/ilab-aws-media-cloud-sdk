@@ -1,5 +1,5 @@
 <?php
-namespace ILAB_Aws\DynamoDb;
+namespace ILABAmazon\DynamoDb;
 
 use Psr\Http\Message\StreamInterface;
 

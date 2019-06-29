@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\Crypto;
+namespace ILABAmazon\Crypto;
 
-use ILAB_Aws\HasDataTrait;
+use ILABAmazon\HasDataTrait;
 use \ArrayAccess;
 use \IteratorAggregate;
 use \InvalidArgumentException;

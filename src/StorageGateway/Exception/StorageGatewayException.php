@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\StorageGateway\Exception;
+namespace ILABAmazon\StorageGateway\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the AWS Storage Gateway service.

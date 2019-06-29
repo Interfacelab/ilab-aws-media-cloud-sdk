@@ -1,8 +1,8 @@
 <?php
-namespace ILAB_Aws\S3\Exception;
+namespace ILABAmazon\S3\Exception;
 
-use ILAB_Aws\HasMonitoringEventsTrait;
-use ILAB_Aws\MonitoringEventsInterface;
+use ILABAmazon\HasMonitoringEventsTrait;
+use ILABAmazon\MonitoringEventsInterface;
 
 /**
  * Exception thrown when errors occur while deleting objects using a

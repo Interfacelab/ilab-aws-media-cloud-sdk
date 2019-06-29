@@ -1,10 +1,10 @@
 <?php
 
-namespace ILAB_Aws\ClientSideMonitoring;
+namespace ILABAmazon\ClientSideMonitoring;
 
-use ILAB_Aws\CommandInterface;
-use ILAB_Aws\Exception\AwsException;
-use ILAB_Aws\ResultInterface;
+use ILABAmazon\CommandInterface;
+use ILABAmazon\Exception\AwsException;
+use ILABAmazon\ResultInterface;
 use GuzzleHttp\Psr7\Request;
 use Psr\Http\Message\RequestInterface;
 

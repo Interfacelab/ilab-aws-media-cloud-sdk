@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\Api\Parser;
+namespace ILABAmazon\Api\Parser;
 
-use ILAB_Aws\Api\Parser\Exception\ParserException;
+use ILABAmazon\Api\Parser\Exception\ParserException;
 use Psr\Http\Message\ResponseInterface;
 
 trait PayloadParserTrait

@@ -1,5 +1,5 @@
 <?php
-namespace ILAB_Aws\S3;
+namespace ILABAmazon\S3;
 
 use GuzzleHttp\Promise\PromisorInterface;
 use GuzzleHttp\Psr7;
@@ -123,7 +123,7 @@ class ObjectUploader implements PromisorInterface
         }
 
         // If body >= 5 MB, then use multipart. [YES]
-        if ($body->isSeekable()) {
+        if ($body->isSeekable() && $body->getMetadata('uri') !== 'php://input') {
             // If the body is seekable, just rewind the body.
             $body->seek(0);
         } else {

@@ -1,5 +1,5 @@
 <?php
-namespace ILAB_Aws\S3;
+namespace ILABAmazon\S3;
 
 use GuzzleHttp\Psr7;
 use Psr\Http\Message\UriInterface;

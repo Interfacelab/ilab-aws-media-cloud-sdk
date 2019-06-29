@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\Athena\Exception;
+namespace ILABAmazon\Athena\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **Amazon Athena** service.

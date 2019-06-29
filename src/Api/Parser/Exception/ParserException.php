@@ -1,9 +1,9 @@
 <?php
-namespace ILAB_Aws\Api\Parser\Exception;
+namespace ILABAmazon\Api\Parser\Exception;
 
-use ILAB_Aws\HasMonitoringEventsTrait;
-use ILAB_Aws\MonitoringEventsInterface;
-use ILAB_Aws\ResponseContainerInterface;
+use ILABAmazon\HasMonitoringEventsTrait;
+use ILABAmazon\MonitoringEventsInterface;
+use ILABAmazon\ResponseContainerInterface;
 
 class ParserException extends \RuntimeException implements
     MonitoringEventsInterface,

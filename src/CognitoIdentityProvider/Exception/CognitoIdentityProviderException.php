@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\CognitoIdentityProvider\Exception;
+namespace ILABAmazon\CognitoIdentityProvider\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **Amazon Cognito Identity Provider** service.

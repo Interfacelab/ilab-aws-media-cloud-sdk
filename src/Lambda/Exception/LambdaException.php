@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\Lambda\Exception;
+namespace ILABAmazon\Lambda\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with AWS Lambda

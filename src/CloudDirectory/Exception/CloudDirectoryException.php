@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\CloudDirectory\Exception;
+namespace ILABAmazon\CloudDirectory\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **Amazon CloudDirectory** service.

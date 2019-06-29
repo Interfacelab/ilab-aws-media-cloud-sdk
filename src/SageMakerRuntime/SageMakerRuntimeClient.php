@@ -1,11 +1,11 @@
 <?php
-namespace ILAB_Aws\SageMakerRuntime;
+namespace ILABAmazon\SageMakerRuntime;
 
-use ILAB_Aws\AwsClient;
+use ILABAmazon\AwsClient;
 
 /**
  * This client is used to interact with the **Amazon SageMaker Runtime** service.
- * @method \ILAB_Aws\Result invokeEndpoint(array $args = [])
+ * @method \ILABAmazon\Result invokeEndpoint(array $args = [])
  * @method \GuzzleHttp\Promise\Promise invokeEndpointAsync(array $args = [])
  */
 class SageMakerRuntimeClient extends AwsClient {}

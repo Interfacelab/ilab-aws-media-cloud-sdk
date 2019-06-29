@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\Pricing\Exception;
+namespace ILABAmazon\Pricing\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWS Price List Service** service.

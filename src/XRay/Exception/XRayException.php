@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\XRay\Exception;
+namespace ILABAmazon\XRay\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWS X-Ray** service.

@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\CognitoSync\Exception;
+namespace ILABAmazon\CognitoSync\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the Amazon Cognito Sync service.

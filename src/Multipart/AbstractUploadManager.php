@@ -1,13 +1,13 @@
 <?php
-namespace ILAB_Aws\Multipart;
+namespace ILABAmazon\Multipart;
 
-use ILAB_Aws\AwsClientInterface as Client;
-use ILAB_Aws\CommandInterface;
-use ILAB_Aws\CommandPool;
-use ILAB_Aws\Exception\AwsException;
-use ILAB_Aws\Exception\MultipartUploadException;
-use ILAB_Aws\Result;
-use ILAB_Aws\ResultInterface;
+use ILABAmazon\AwsClientInterface as Client;
+use ILABAmazon\CommandInterface;
+use ILABAmazon\CommandPool;
+use ILABAmazon\Exception\AwsException;
+use ILABAmazon\Exception\MultipartUploadException;
+use ILABAmazon\Result;
+use ILABAmazon\ResultInterface;
 use GuzzleHttp\Promise;
 use GuzzleHttp\Promise\PromiseInterface;
 use InvalidArgumentException as IAE;
@@ -31,7 +31,7 @@ abstract class AbstractUploadManager implements Promise\PromisorInterface
         'before_initiate'     => null,
         'before_upload'       => null,
         'before_complete'     => null,
-        'exception_class'     => 'ILAB_Aws\Exception\MultipartUploadException',
+        'exception_class'     => 'ILABAmazon\Exception\MultipartUploadException',
     ];
 
     /** @var Client Client used for the upload. */
@@ -137,13 +137,29 @@ abstract class AbstractUploadManager implements Promise\PromisorInterface
             // Complete the multipart upload.
             yield $this->execCommand('complete', $this->getCompleteParams());
             $this->state->setStatus(UploadState::COMPLETED);
-        })->otherwise(function (\Exception $e) {
-            // Throw errors from the operations as a specific Multipart error.
-            if ($e instanceof AwsException) {
-                $e = new $this->config['exception_class']($this->state, $e);
-            }
-            throw $e;
-        });
+        })->otherwise($this->buildFailureCatch());
+    }
+
+    private function transformException($e)
+    {
+        // Throw errors from the operations as a specific Multipart error.
+        if ($e instanceof AwsException) {
+            $e = new $this->config['exception_class']($this->state, $e);
+        }
+        throw $e;
+    }
+
+    private function buildFailureCatch()
+    {
+        if (interface_exists("Throwable")) {
+            return function (\Throwable $e) {
+                return $this->transformException($e);
+            };
+        } else {
+            return function (\Exception $e) {
+                return $this->transformException($e);
+            };
+        }
     }
 
     protected function getConfig()

@@ -1,40 +1,46 @@
 <?php
-namespace ILAB_Aws\CloudWatchEvents;
+namespace ILABAmazon\CloudWatchEvents;
 
-use ILAB_Aws\AwsClient;
+use ILABAmazon\AwsClient;
 
 /**
  * This client is used to interact with the **Amazon CloudWatch Events** service.
  *
- * @method \ILAB_Aws\Result deleteRule(array $args = [])
+ * @method \ILABAmazon\Result deleteRule(array $args = [])
  * @method \GuzzleHttp\Promise\Promise deleteRuleAsync(array $args = [])
- * @method \ILAB_Aws\Result describeEventBus(array $args = [])
+ * @method \ILABAmazon\Result describeEventBus(array $args = [])
  * @method \GuzzleHttp\Promise\Promise describeEventBusAsync(array $args = [])
- * @method \ILAB_Aws\Result describeRule(array $args = [])
+ * @method \ILABAmazon\Result describeRule(array $args = [])
  * @method \GuzzleHttp\Promise\Promise describeRuleAsync(array $args = [])
- * @method \ILAB_Aws\Result disableRule(array $args = [])
+ * @method \ILABAmazon\Result disableRule(array $args = [])
  * @method \GuzzleHttp\Promise\Promise disableRuleAsync(array $args = [])
- * @method \ILAB_Aws\Result enableRule(array $args = [])
+ * @method \ILABAmazon\Result enableRule(array $args = [])
  * @method \GuzzleHttp\Promise\Promise enableRuleAsync(array $args = [])
- * @method \ILAB_Aws\Result listRuleNamesByTarget(array $args = [])
+ * @method \ILABAmazon\Result listRuleNamesByTarget(array $args = [])
  * @method \GuzzleHttp\Promise\Promise listRuleNamesByTargetAsync(array $args = [])
- * @method \ILAB_Aws\Result listRules(array $args = [])
+ * @method \ILABAmazon\Result listRules(array $args = [])
  * @method \GuzzleHttp\Promise\Promise listRulesAsync(array $args = [])
- * @method \ILAB_Aws\Result listTargetsByRule(array $args = [])
+ * @method \ILABAmazon\Result listTagsForResource(array $args = [])
+ * @method \GuzzleHttp\Promise\Promise listTagsForResourceAsync(array $args = [])
+ * @method \ILABAmazon\Result listTargetsByRule(array $args = [])
  * @method \GuzzleHttp\Promise\Promise listTargetsByRuleAsync(array $args = [])
- * @method \ILAB_Aws\Result putEvents(array $args = [])
+ * @method \ILABAmazon\Result putEvents(array $args = [])
  * @method \GuzzleHttp\Promise\Promise putEventsAsync(array $args = [])
- * @method \ILAB_Aws\Result putPermission(array $args = [])
+ * @method \ILABAmazon\Result putPermission(array $args = [])
  * @method \GuzzleHttp\Promise\Promise putPermissionAsync(array $args = [])
- * @method \ILAB_Aws\Result putRule(array $args = [])
+ * @method \ILABAmazon\Result putRule(array $args = [])
  * @method \GuzzleHttp\Promise\Promise putRuleAsync(array $args = [])
- * @method \ILAB_Aws\Result putTargets(array $args = [])
+ * @method \ILABAmazon\Result putTargets(array $args = [])
  * @method \GuzzleHttp\Promise\Promise putTargetsAsync(array $args = [])
- * @method \ILAB_Aws\Result removePermission(array $args = [])
+ * @method \ILABAmazon\Result removePermission(array $args = [])
  * @method \GuzzleHttp\Promise\Promise removePermissionAsync(array $args = [])
- * @method \ILAB_Aws\Result removeTargets(array $args = [])
+ * @method \ILABAmazon\Result removeTargets(array $args = [])
  * @method \GuzzleHttp\Promise\Promise removeTargetsAsync(array $args = [])
- * @method \ILAB_Aws\Result testEventPattern(array $args = [])
+ * @method \ILABAmazon\Result tagResource(array $args = [])
+ * @method \GuzzleHttp\Promise\Promise tagResourceAsync(array $args = [])
+ * @method \ILABAmazon\Result testEventPattern(array $args = [])
  * @method \GuzzleHttp\Promise\Promise testEventPatternAsync(array $args = [])
+ * @method \ILABAmazon\Result untagResource(array $args = [])
+ * @method \GuzzleHttp\Promise\Promise untagResourceAsync(array $args = [])
  */
 class CloudWatchEventsClient extends AwsClient {}

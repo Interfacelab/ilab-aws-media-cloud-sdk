@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\SnowBall\Exception;
+namespace ILABAmazon\SnowBall\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **Amazon Import/Export Snowball** service.

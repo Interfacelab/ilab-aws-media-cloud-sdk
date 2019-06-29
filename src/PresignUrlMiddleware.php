@@ -1,8 +1,8 @@
 <?php
-namespace ILAB_Aws;
+namespace ILABAmazon;
 
-use ILAB_Aws\Signature\SignatureV4;
-use ILAB_Aws\Endpoint\EndpointProvider;
+use ILABAmazon\Signature\SignatureV4;
+use ILABAmazon\Endpoint\EndpointProvider;
 use GuzzleHttp\Psr7\Uri;
 use Psr\Http\Message\RequestInterface;
 
@@ -77,7 +77,7 @@ class PresignUrlMiddleware
         $newCmd->{'__skip' . $cmdName} = true;
 
         // Serialize a request for the operation.
-        $request = \ILAB_Aws\serialize($newCmd);
+        $request = \ILABAmazon\serialize($newCmd);
         // Create the new endpoint for the target endpoint.
         $endpoint = EndpointProvider::resolve($this->endpointProvider, [
             'region'  => $cmd['SourceRegion'],

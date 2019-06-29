@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\Redshift\Exception;
+namespace ILABAmazon\Redshift\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the Amazon Redshift service.

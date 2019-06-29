@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\Batch\Exception;
+namespace ILABAmazon\Batch\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWS Batch** service.

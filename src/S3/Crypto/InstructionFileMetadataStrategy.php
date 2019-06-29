@@ -1,9 +1,9 @@
 <?php
-namespace ILAB_Aws\S3\Crypto;
+namespace ILABAmazon\S3\Crypto;
 
-use \ILAB_Aws\Crypto\MetadataStrategyInterface;
-use \ILAB_Aws\Crypto\MetadataEnvelope;
-use \ILAB_Aws\S3\S3Client;
+use \ILABAmazon\Crypto\MetadataStrategyInterface;
+use \ILABAmazon\Crypto\MetadataEnvelope;
+use \ILABAmazon\S3\S3Client;
 
 /**
  * Stores and reads encryption MetadataEnvelope information in a file on Amazon

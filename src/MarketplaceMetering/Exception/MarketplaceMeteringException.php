@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\MarketplaceMetering\Exception;
+namespace ILABAmazon\MarketplaceMetering\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWSMarketplace Metering** service.

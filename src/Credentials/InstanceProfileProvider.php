@@ -1,7 +1,8 @@
 <?php
-namespace ILAB_Aws\Credentials;
+namespace ILABAmazon\Credentials;
 
-use ILAB_Aws\Exception\CredentialsException;
+use ILABAmazon\Exception\CredentialsException;
+use ILABAmazon\Sdk;
 use GuzzleHttp\Promise;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Promise\PromiseInterface;
@@ -37,7 +38,7 @@ class InstanceProfileProvider
         $this->profile = isset($config['profile']) ? $config['profile'] : null;
         $this->client = isset($config['client'])
             ? $config['client'] // internal use only
-            : \ILAB_Aws\default_http_handler();
+            : \ILABAmazon\default_http_handler();
     }
 
     /**
@@ -78,6 +79,12 @@ class InstanceProfileProvider
 
         $fn = $this->client;
         $request = new Request('GET', self::SERVER_URI . $url);
+        $userAgent = 'aws-sdk-php/' . Sdk::VERSION;
+        if (defined('HHVM_VERSION')) {
+            $userAgent .= ' HHVM/' . HHVM_VERSION;
+        }
+        $userAgent .= ' ' . \ILABAmazon\default_user_agent();
+        $request = $request->withHeader('User-Agent', $userAgent);
 
         return $fn($request, ['timeout' => $this->timeout])
             ->then(function (ResponseInterface $response) {

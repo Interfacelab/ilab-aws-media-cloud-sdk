@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\ResourceGroupsTaggingAPI\Exception;
+namespace ILABAmazon\ResourceGroupsTaggingAPI\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWS Resource Groups Tagging API** service.

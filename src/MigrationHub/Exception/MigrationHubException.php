@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\MigrationHub\Exception;
+namespace ILABAmazon\MigrationHub\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWS Migration Hub** service.

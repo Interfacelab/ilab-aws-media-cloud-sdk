@@ -1,5 +1,5 @@
 <?php
-namespace ILAB_Aws;
+namespace ILABAmazon;
 
 use Psr\Http\Message\RequestInterface;
 use GuzzleHttp\ClientInterface;
@@ -104,7 +104,7 @@ function partition($iterable, $size)
  *
  *     $a = function ($x, $y) { return null; };
  *     $b = function ($x, $y) { return $x + $y; };
- *     $fn = \ILAB_Aws\or_chain($a, $b);
+ *     $fn = \ILABAmazon\or_chain($a, $b);
  *     echo $fn(1, 2); // 3
  *
  * @return callable
@@ -141,8 +141,9 @@ function or_chain()
  */
 function load_compiled_json($path)
 {
-    if ($compiled = @include("$path.php")) {
-        return $compiled;
+    $compiledFilepath = "{$path}.php";
+    if (is_readable($compiledFilepath)) {
+        return include($compiledFilepath);
     }
 
     if (!file_exists($path)) {
@@ -264,11 +265,11 @@ function default_http_handler()
 {
     $version = (string) ClientInterface::VERSION;
     if ($version[0] === '5') {
-        return new \ILAB_Aws\Handler\GuzzleV5\GuzzleHandler();
+        return new \ILABAmazon\Handler\GuzzleV5\GuzzleHandler();
     }
 
     if ($version[0] === '6') {
-        return new \ILAB_Aws\Handler\GuzzleV6\GuzzleHandler();
+        return new \ILABAmazon\Handler\GuzzleV6\GuzzleHandler();
     }
 
     throw new \RuntimeException('Unknown Guzzle version: ' . $version);
@@ -370,5 +371,41 @@ function manifest($service = null)
 
     throw new \InvalidArgumentException(
         "The service \"{$service}\" is not provided by the AWS SDK for PHP."
+    );
+}
+
+/**
+ * Checks if supplied parameter is a valid hostname
+ *
+ * @param string $hostname
+ * @return bool
+ */
+function is_valid_hostname($hostname)
+{
+    return (
+        preg_match("/^([a-z\d](-*[a-z\d])*)(\.([a-z\d](-*[a-z\d])*))*\.?$/i", $hostname)
+        && preg_match("/^.{1,253}$/", $hostname)
+        && preg_match("/^[^\.]{1,63}(\.[^\.]{0,63})*$/", $hostname)
+    );
+}
+
+/**
+ * Ignores '#' full line comments, which parse_ini_file no longer does
+ * in PHP 7+.
+ *
+ * @param $filename
+ * @param bool $process_sections
+ * @param int $scanner_mode
+ * @return array|bool
+ */
+function parse_ini_file(
+    $filename,
+    $process_sections = false,
+    $scanner_mode = INI_SCANNER_NORMAL)
+{
+    return parse_ini_string(
+        preg_replace('/^#.*\\n/m', "", file_get_contents($filename)),
+        $process_sections,
+        $scanner_mode
     );
 }

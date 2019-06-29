@@ -1,11 +1,11 @@
 <?php
-namespace ILAB_Aws\Api\Serializer;
+namespace ILABAmazon\Api\Serializer;
 
-use ILAB_Aws\Api\StructureShape;
-use ILAB_Aws\Api\ListShape;
-use ILAB_Aws\Api\MapShape;
-use ILAB_Aws\Api\Shape;
-use ILAB_Aws\Api\TimestampShape;
+use ILABAmazon\Api\StructureShape;
+use ILABAmazon\Api\ListShape;
+use ILABAmazon\Api\MapShape;
+use ILABAmazon\Api\Shape;
+use ILABAmazon\Api\TimestampShape;
 
 /**
  * @internal

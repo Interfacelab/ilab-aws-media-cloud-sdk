@@ -1,12 +1,12 @@
 <?php
 
-namespace ILAB_Aws\ClientSideMonitoring;
+namespace ILABAmazon\ClientSideMonitoring;
 
-use ILAB_Aws\CommandInterface;
-use ILAB_Aws\Credentials\CredentialsInterface;
-use ILAB_Aws\Exception\AwsException;
-use ILAB_Aws\ResponseContainerInterface;
-use ILAB_Aws\ResultInterface;
+use ILABAmazon\CommandInterface;
+use ILABAmazon\Credentials\CredentialsInterface;
+use ILABAmazon\Exception\AwsException;
+use ILABAmazon\ResponseContainerInterface;
+use ILABAmazon\ResultInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -54,11 +54,6 @@ class ApiCallAttemptMonitoringMiddleware extends AbstractMonitoringMiddleware
     {
         return [
             'Fqdn' => $request->getUri()->getHost(),
-            'UserAgent' => substr(
-                $request->getHeaderLine('User-Agent') . ' ' . \ILAB_Aws\default_user_agent(),
-                0,
-                256
-            ),
         ];
     }
 

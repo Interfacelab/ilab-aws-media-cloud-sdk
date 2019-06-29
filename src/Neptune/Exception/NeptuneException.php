@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\Neptune\Exception;
+namespace ILABAmazon\Neptune\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **Amazon Neptune** service.

@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\MediaPackage\Exception;
+namespace ILABAmazon\MediaPackage\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWS Elemental MediaPackage** service.

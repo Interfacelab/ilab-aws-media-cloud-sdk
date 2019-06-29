@@ -1,13 +1,13 @@
 <?php
-namespace ILAB_Aws\S3;
+namespace ILABAmazon\S3;
 
-use ILAB_Aws\HashingStream;
-use ILAB_Aws\Multipart\AbstractUploader;
-use ILAB_Aws\PhpHash;
-use ILAB_Aws\ResultInterface;
+use ILABAmazon\HashingStream;
+use ILABAmazon\Multipart\AbstractUploader;
+use ILABAmazon\PhpHash;
+use ILABAmazon\ResultInterface;
 use GuzzleHttp\Psr7;
 use Psr\Http\Message\StreamInterface as Stream;
-use ILAB_Aws\S3\Exception\S3MultipartUploadException;
+use ILABAmazon\S3\Exception\S3MultipartUploadException;
 
 /**
  * Encapsulates the execution of a multipart upload to S3 or Glacier.

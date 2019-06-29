@@ -1,12 +1,12 @@
 <?php
-namespace ILAB_Aws\Glacier;
+namespace ILABAmazon\Glacier;
 
-use ILAB_Aws\CommandInterface;
-use ILAB_Aws\HashingStream;
-use ILAB_Aws\Multipart\AbstractUploader;
-use ILAB_Aws\Multipart\UploadState;
-use ILAB_Aws\PhpHash;
-use ILAB_Aws\ResultInterface;
+use ILABAmazon\CommandInterface;
+use ILABAmazon\HashingStream;
+use ILABAmazon\Multipart\AbstractUploader;
+use ILABAmazon\Multipart\UploadState;
+use ILABAmazon\PhpHash;
+use ILABAmazon\ResultInterface;
 use GuzzleHttp\Psr7;
 use Psr\Http\Message\StreamInterface as Stream;
 

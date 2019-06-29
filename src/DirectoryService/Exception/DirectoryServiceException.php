@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\DirectoryService\Exception;
+namespace ILABAmazon\DirectoryService\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * AWS Directory Service Exception

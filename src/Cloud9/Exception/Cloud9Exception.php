@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\Cloud9\Exception;
+namespace ILABAmazon\Cloud9\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWS Cloud9** service.

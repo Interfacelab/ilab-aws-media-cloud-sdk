@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\CloudHsm\Exception;
+namespace ILABAmazon\CloudHsm\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * AWS CloudHSM exception.

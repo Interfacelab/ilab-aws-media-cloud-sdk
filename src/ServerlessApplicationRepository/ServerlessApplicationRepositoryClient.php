@@ -1,33 +1,35 @@
 <?php
-namespace ILAB_Aws\ServerlessApplicationRepository;
+namespace ILABAmazon\ServerlessApplicationRepository;
 
-use ILAB_Aws\AwsClient;
+use ILABAmazon\AwsClient;
 
 /**
  * This client is used to interact with the **AWSServerlessApplicationRepository** service.
- * @method \ILAB_Aws\Result createApplication(array $args = [])
+ * @method \ILABAmazon\Result createApplication(array $args = [])
  * @method \GuzzleHttp\Promise\Promise createApplicationAsync(array $args = [])
- * @method \ILAB_Aws\Result createApplicationVersion(array $args = [])
+ * @method \ILABAmazon\Result createApplicationVersion(array $args = [])
  * @method \GuzzleHttp\Promise\Promise createApplicationVersionAsync(array $args = [])
- * @method \ILAB_Aws\Result createCloudFormationChangeSet(array $args = [])
+ * @method \ILABAmazon\Result createCloudFormationChangeSet(array $args = [])
  * @method \GuzzleHttp\Promise\Promise createCloudFormationChangeSetAsync(array $args = [])
- * @method \ILAB_Aws\Result createCloudFormationTemplate(array $args = [])
+ * @method \ILABAmazon\Result createCloudFormationTemplate(array $args = [])
  * @method \GuzzleHttp\Promise\Promise createCloudFormationTemplateAsync(array $args = [])
- * @method \ILAB_Aws\Result deleteApplication(array $args = [])
+ * @method \ILABAmazon\Result deleteApplication(array $args = [])
  * @method \GuzzleHttp\Promise\Promise deleteApplicationAsync(array $args = [])
- * @method \ILAB_Aws\Result getApplication(array $args = [])
+ * @method \ILABAmazon\Result getApplication(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getApplicationAsync(array $args = [])
- * @method \ILAB_Aws\Result getApplicationPolicy(array $args = [])
+ * @method \ILABAmazon\Result getApplicationPolicy(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getApplicationPolicyAsync(array $args = [])
- * @method \ILAB_Aws\Result getCloudFormationTemplate(array $args = [])
+ * @method \ILABAmazon\Result getCloudFormationTemplate(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getCloudFormationTemplateAsync(array $args = [])
- * @method \ILAB_Aws\Result listApplicationVersions(array $args = [])
+ * @method \ILABAmazon\Result listApplicationDependencies(array $args = [])
+ * @method \GuzzleHttp\Promise\Promise listApplicationDependenciesAsync(array $args = [])
+ * @method \ILABAmazon\Result listApplicationVersions(array $args = [])
  * @method \GuzzleHttp\Promise\Promise listApplicationVersionsAsync(array $args = [])
- * @method \ILAB_Aws\Result listApplications(array $args = [])
+ * @method \ILABAmazon\Result listApplications(array $args = [])
  * @method \GuzzleHttp\Promise\Promise listApplicationsAsync(array $args = [])
- * @method \ILAB_Aws\Result putApplicationPolicy(array $args = [])
+ * @method \ILABAmazon\Result putApplicationPolicy(array $args = [])
  * @method \GuzzleHttp\Promise\Promise putApplicationPolicyAsync(array $args = [])
- * @method \ILAB_Aws\Result updateApplication(array $args = [])
+ * @method \ILABAmazon\Result updateApplication(array $args = [])
  * @method \GuzzleHttp\Promise\Promise updateApplicationAsync(array $args = [])
  */
 class ServerlessApplicationRepositoryClient extends AwsClient {}

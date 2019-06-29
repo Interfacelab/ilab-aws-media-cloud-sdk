@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\CloudHSMV2\Exception;
+namespace ILABAmazon\CloudHSMV2\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWS CloudHSM V2** service.

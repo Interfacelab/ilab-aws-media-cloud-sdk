@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\DirectConnect\Exception;
+namespace ILABAmazon\DirectConnect\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the AWS Direct Connect service.

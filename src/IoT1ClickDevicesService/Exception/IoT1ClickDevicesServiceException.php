@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\IoT1ClickDevicesService\Exception;
+namespace ILABAmazon\IoT1ClickDevicesService\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWS IoT 1-Click Devices Service** service.

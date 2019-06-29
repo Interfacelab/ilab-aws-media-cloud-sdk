@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws\SecretsManager\Exception;
+namespace ILABAmazon\SecretsManager\Exception;
 
-use ILAB_Aws\Exception\AwsException;
+use ILABAmazon\Exception\AwsException;
 
 /**
  * Represents an error interacting with the **AWS Secrets Manager** service.

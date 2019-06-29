@@ -1,7 +1,7 @@
 <?php
-namespace ILAB_Aws;
+namespace ILABAmazon;
 
-use ILAB_Aws\Api\Parser\Exception\ParserException;
+use ILABAmazon\Api\Parser\Exception\ParserException;
 use GuzzleHttp\Promise;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -47,7 +47,7 @@ class WrappedHttpHandler
         callable $httpHandler,
         callable $parser,
         callable $errorParser,
-        $exceptionClass = 'ILAB_Aws\Exception\AwsException',
+        $exceptionClass = 'ILABAmazon\Exception\AwsException',
         $collectStats = false
     ) {
         $this->httpHandler = $httpHandler;
@@ -81,7 +81,7 @@ class WrappedHttpHandler
             };
         } elseif (isset($options['http_stats_receiver'])) {
             throw new \InvalidArgumentException('Providing a custom HTTP stats'
-                . ' receiver to Aws\WrappedHttpHandler is not supported.');
+                . ' receiver to ILABAmazon\WrappedHttpHandler is not supported.');
         }
 
         return Promise\promise_for($fn($request, $options))
